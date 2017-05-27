@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "system", //es6
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+//    "outDir": "../dist/js",
+    "paths": {
+      "annyang": [
+        "typings/annyang"
+      ]
+    }
+  }
+}
