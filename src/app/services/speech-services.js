@@ -38,6 +38,9 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                 userSaid(userSaid, commandText, phrases = []) {
                     // console.log(userSaid);
                     this._currentCommand = userSaid;
+                    this.zone.run(() => {
+                        //running zone update
+                    });
                 }
                 get currentCommand() {
                     return this._currentCommand;
@@ -107,7 +110,8 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                         },
                     };
                 }
-                start() {
+                start(zone) {
+                    this.zone = zone;
                     annyang_1.default.addCommands(this._commands);
                     annyang_1.default.debug(true);
                     annyang_1.default.start({ paused: false });

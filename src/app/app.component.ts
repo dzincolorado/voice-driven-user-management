@@ -2,7 +2,7 @@
  * Created by denisziegler on 5/26/17.
  */
 
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef} from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 
 import {SpeechService} from "./services/speech-services";
@@ -12,8 +12,7 @@ import {GroupService} from "./services/group-service";
 @Component({
   providers: [SpeechService],
   selector: "voice-app",
-  templateUrl: './app.component.html',
-  changeDetection: ChangeDetectionStrategy.Default
+  templateUrl: './app.component.html'
 })
 
 export class App implements OnInit {
@@ -22,7 +21,6 @@ export class App implements OnInit {
       private router:Router,
       private userSvc: UserService,
       private groupSvc: GroupService,
-      private changeDetect: ChangeDetectorRef
   ){
 
     this.speechSvc = new SpeechService();
@@ -35,6 +33,6 @@ export class App implements OnInit {
   }
 
   ngOnInit() {
-    this.changeDetect.detectChanges();
+
   }
 }

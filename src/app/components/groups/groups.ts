@@ -2,10 +2,7 @@
  * Created by denisziegler on 5/26/17.
  */
 
-import {
-    Component
-} from "@angular/core";
-import {Router} from "@angular/router";
+import {Component} from "@angular/core";
 import {GroupService} from "../../services/group-service";
 
 @Component({

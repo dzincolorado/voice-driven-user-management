@@ -36,33 +36,31 @@ System.register(["@angular/core", "@angular/router", "./services/speech-services
              * Created by denisziegler on 5/26/17.
              */
             App = class App {
-                constructor(router, userSvc, groupSvc, changeDetect) {
+                constructor(router, userSvc, groupSvc, zone) {
                     this.router = router;
                     this.userSvc = userSvc;
                     this.groupSvc = groupSvc;
-                    this.changeDetect = changeDetect;
+                    this.zone = zone;
                     this.speechSvc = new speech_services_1.SpeechService();
                     this.speechSvc.configureCommands({ router: router, userService: userSvc, groupService: groupSvc });
-                    this.speechSvc.start();
+                    this.speechSvc.start(zone);
                 }
                 get currentCommand() {
                     return this.speechSvc.currentCommand;
                 }
                 ngOnInit() {
-                    this.changeDetect.detectChanges();
                 }
             };
             App = __decorate([
                 core_1.Component({
                     providers: [speech_services_1.SpeechService],
                     selector: "voice-app",
-                    templateUrl: './app.component.html',
-                    changeDetection: core_1.ChangeDetectionStrategy.Default
+                    templateUrl: './app.component.html'
                 }),
                 __metadata("design:paramtypes", [router_1.Router,
                     user_service_1.UserService,
                     group_service_1.GroupService,
-                    core_1.ChangeDetectorRef])
+                    core_1.NgZone])
             ], App);
             exports_1("App", App);
         }

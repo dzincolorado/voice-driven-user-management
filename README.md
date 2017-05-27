@@ -8,3 +8,4 @@ Run `npm start`
 
 Note: does not work on iOS safari
 Note2: currently requires you to be connected to enable speech recognition
+Note3: all data created is purely in memory; restarting the app will wipe out the data
