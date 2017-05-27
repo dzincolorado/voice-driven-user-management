@@ -21,3 +21,24 @@ h1 {
   margin-top:15px;
   display: inline-block;
 }
+
+.sub-header-wrapper {
+  margin: 1rem;
+}
+
+.sample-commands {
+  text-align: left;
+  margin: 10px 5px;
+  bottom:10px;
+  right:10px;
+  position:absolute;
+}
+
+.empty-message {
+  text-align: center;
+  margin: 10px;
+}
+
+.info-block {
+  margin-left: 1.3rem;
+}

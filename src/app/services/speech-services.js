@@ -38,18 +38,37 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                 userSaid(userSaid, commandText, phrases = []) {
                     // console.log(userSaid);
                     this._currentCommand = userSaid;
-                    this.zone.run(() => {
-                        //running zone update
-                    });
+                    // this.zoneUpdate();
                 }
                 get currentCommand() {
                     return this._currentCommand;
+                }
+                setZone(zone) {
+                    this.zone = zone;
+                }
+                zoneUpdate() {
+                    this.zone.run(() => {
+                        console.log("updating zone");
+                    });
+                }
+                finishUserEdits(options) {
+                    if (options.router.url === "/users/add") {
+                        if (options.userService.editingUser.groups.length > 0) {
+                            options.userService.finishEditing();
+                            this._router.navigate(['/users']);
+                        }
+                        else {
+                            alert("Please add at least one group");
+                        }
+                    }
+                    this.zoneUpdate();
                 }
                 configureCommands(options) {
                     this._router = options.router;
                     this._commands = {
                         'listen up': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
+                            alert("I'm here");
                         },
                         'see users': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
@@ -58,23 +77,32 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                         'view users': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
                             this._router.navigate(['/users']);
+                            this.zoneUpdate();
                         },
                         'see groups': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
                             this._router.navigate(['/groups']);
+                            this.zoneUpdate();
                         },
                         'view groups': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
                             this._router.navigate(['/groups']);
+                            this.zoneUpdate();
                         },
                         'go home': () => {
                             annyang_1.default.addCallback('resultMatch', this.userSaid, null);
                             this._router.navigate(['/']);
+                            this.zoneUpdate();
                         },
                         'add user *userName': (userName) => {
                             let user = new user_1.User(userName);
                             options.userService.setEditingUser(user);
                             this._router.navigate(['/users/add']);
+                            this.zoneUpdate();
+                        },
+                        'continue edit': () => {
+                            this._router.navigate(['/users/add']);
+                            this.zoneUpdate();
                         },
                         'add group *groupName': (groupName) => {
                             if (options.router.url === "/users/add") {
@@ -87,19 +115,15 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                             else {
                                 let group = new group_1.Group(groupName);
                                 options.groupService.add(group);
+                                this._router.navigate(['/groups']);
                             }
+                            this.zoneUpdate();
                         },
-                        'finish': (groupName) => {
-                            if (options.router.url === "/users/add") {
-                                options.userService.finishEditing();
-                                this._router.navigate(['/users']);
-                            }
+                        'finish': () => {
+                            this.finishUserEdits(options);
                         },
-                        'finished': (groupName) => {
-                            if (options.router.url === "/users/add") {
-                                options.userService.finishEditing();
-                                this._router.navigate(['/users']);
-                            }
+                        'finished': () => {
+                            this.finishUserEdits(options);
                         },
                         'remove group *groupName': (groupName) => {
                             if (options.router.url === "/users/add") {
@@ -107,11 +131,14 @@ System.register(["annyang", "@angular/core", "../models/user", "../models/group"
                                 let foundGroup = options.groupService.findByName(groupName);
                                 editingUser.removeGroup(foundGroup);
                             }
+                            else {
+                                this._router.navigate(['/groups']);
+                            }
+                            this.zoneUpdate();
                         },
                     };
                 }
-                start(zone) {
-                    this.zone = zone;
+                start() {
                     annyang_1.default.addCommands(this._commands);
                     annyang_1.default.debug(true);
                     annyang_1.default.start({ paused: false });

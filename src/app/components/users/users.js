@@ -31,6 +31,10 @@ System.register(["@angular/core", "../../services/user-service"], function (expo
                     this.userSvc = userSvc;
                 }
             };
+            __decorate([
+                core_1.Input(),
+                __metadata("design:type", Boolean)
+            ], Users.prototype, "hideHelpText", void 0);
             Users = __decorate([
                 core_1.Component({
                     providers: [],

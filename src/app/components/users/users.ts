@@ -2,7 +2,7 @@
  * Created by denisziegler on 5/26/17.
  */
 
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {UserService} from "../../services/user-service";
 
 @Component({
@@ -12,6 +12,7 @@ import {UserService} from "../../services/user-service";
 })
 
 export class Users {
+  @Input() hideHelpText: boolean;
   constructor(public userSvc: UserService){
 
   }

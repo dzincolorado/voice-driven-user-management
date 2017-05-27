@@ -15,7 +15,7 @@ import {UserService} from './services/user-service';
 import {GroupService} from './services/group-service';
 
 @NgModule({
-  imports:      [/*BrowserAnimationsModule, */BrowserModule, FormsModule, HttpModule, ReactiveFormsModule, routing],
+  imports:      [/*BrowserAnimationsModule, */BrowserModule, HttpModule, routing],
   entryComponents: [Home, Groups, Users],
   providers: [UserService, GroupService],
   declarations: [ App, Home, Group, Groups, User, Users  ],

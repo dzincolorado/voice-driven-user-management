@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../ng2Boilerplate/.idea/ng2Boilerplate.iml" filepath="$PROJECT_DIR$/../ng2Boilerplate/.idea/ng2Boilerplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/voice-recognition.iml" filepath="$PROJECT_DIR$/.idea/voice-recognition.iml" />
     </modules>
   </component>

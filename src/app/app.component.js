@@ -42,8 +42,9 @@ System.register(["@angular/core", "@angular/router", "./services/speech-services
                     this.groupSvc = groupSvc;
                     this.zone = zone;
                     this.speechSvc = new speech_services_1.SpeechService();
+                    this.speechSvc.setZone(zone);
                     this.speechSvc.configureCommands({ router: router, userService: userSvc, groupService: groupSvc });
-                    this.speechSvc.start(zone);
+                    this.speechSvc.start();
                 }
                 get currentCommand() {
                     return this.speechSvc.currentCommand;

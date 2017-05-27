@@ -1,10 +1,24 @@
-<div>
-  Users
+<div class="sub-header-wrapper">
+  <span class="text">
+    Users
+  </span>
 </div>
 
 <ol>
   <li *ngFor="let user of userSvc.list">
-    {{user.id}} - {{user.name}}
+    {{user.name}}
     <div>{{user.stringifiedGroups}}</div>
   </li>
 </ol>
+
+<div *ngIf="userSvc.list.length ==0" class="empty-message">
+  There are currently no users
+</div>
+
+<div class="sample-commands" *ngIf="!hideHelpText">
+    Try some voice commands:
+    <ul>
+      <li>Go Home</li>
+      <li>Add User [name]</li>
+    </ul>
+</div>

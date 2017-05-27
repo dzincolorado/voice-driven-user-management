@@ -2,7 +2,7 @@
  * Created by denisziegler on 5/26/17.
  */
 
-import { Component, OnInit} from "@angular/core";
+import { Component, OnInit, NgZone} from "@angular/core";
 import {Router} from "@angular/router";
 
 import {SpeechService} from "./services/speech-services";
@@ -21,9 +21,11 @@ export class App implements OnInit {
       private router:Router,
       private userSvc: UserService,
       private groupSvc: GroupService,
+      private zone: NgZone
   ){
 
     this.speechSvc = new SpeechService();
+    this.speechSvc.setZone(zone);
     this.speechSvc.configureCommands({router: router, userService: userSvc, groupService: groupSvc});
     this.speechSvc.start();
   }

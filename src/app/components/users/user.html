@@ -1,7 +1,18 @@
-<div>
-  User
+<div class="sub-header-wrapper">
+  <span class="text">
+    User
+  </span>
 </div>
 
-<div>
+<div class="info-block">
   {{userSvc.editingUser.name}}
+  <div>{{userSvc.editingUser.stringifiedGroups}}</div>
+</div>
+
+<div class="sample-commands">
+  Try these voice commands:
+  <ul>
+    <li>Add Group [group name]</li>
+    <li>Finished</li>
+  </ul>
 </div>

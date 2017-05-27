@@ -1,9 +1,22 @@
-<div>
-  Groups
+<div class="sub-header-wrapper">
+  <span class="text">
+    Groups
+  </span>
 </div>
 
 <ul>
   <li *ngFor="let group of groupSvc.list">
-    {{group.id}} - {{group.name}}
+    {{group.name}}
   </li>
 </ul>
+
+<div *ngIf="groupSvc.list.length ==0" class="empty-message">
+  There are currently no groups
+</div>
+
+<div class="sample-commands">
+  Try these voice commands:
+  <ul>
+    <li>Add Group [group name]</li>
+  </ul>
+</div>

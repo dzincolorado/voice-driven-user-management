@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/http", "@angular/forms", "@angular/platform-browser", "./app.routes", "./app.component", "./components/home/home", "./components/users/users", "./components/users/user", "./components/groups/groups", "./components/groups/group", "./services/user-service", "./services/group-service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/http", "@angular/platform-browser", "./app.routes", "./app.component", "./components/home/home", "./components/users/users", "./components/users/user", "./components/groups/groups", "./components/groups/group", "./services/user-service", "./services/group-service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "@angular/p
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, forms_1, platform_browser_1, app_routes_1, app_component_1, home_1, users_1, user_1, groups_1, group_1, user_service_1, group_service_1, AppModule;
+    var core_1, http_1, platform_browser_1, app_routes_1, app_component_1, home_1, users_1, user_1, groups_1, group_1, user_service_1, group_service_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -15,9 +15,6 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "@angular/p
             },
             function (http_1_1) {
                 http_1 = http_1_1;
-            },
-            function (forms_1_1) {
-                forms_1 = forms_1_1;
             },
             function (platform_browser_1_1) {
                 platform_browser_1 = platform_browser_1_1;
@@ -55,7 +52,7 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "@angular/p
             };
             AppModule = __decorate([
                 core_1.NgModule({
-                    imports: [/*BrowserAnimationsModule, */ platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, forms_1.ReactiveFormsModule, app_routes_1.routing],
+                    imports: [/*BrowserAnimationsModule, */ platform_browser_1.BrowserModule, http_1.HttpModule, app_routes_1.routing],
                     entryComponents: [home_1.Home, groups_1.Groups, users_1.Users],
                     providers: [user_service_1.UserService, group_service_1.GroupService],
                     declarations: [app_component_1.App, home_1.Home, group_1.Group, groups_1.Groups, user_1.User, users_1.Users],
