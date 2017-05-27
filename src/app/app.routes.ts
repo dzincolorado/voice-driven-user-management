@@ -14,30 +14,36 @@ import {Groups} from './components/groups/groups';
 import {Group} from './components/groups/group';
 
 const appRoutes: Routes = [
-  { path: '',
-    redirectTo:'home',
-    pathMatch:'full'
-  },
   {
     path: 'home',
     component: Home
   },
   {
-    path: 'Users/:id',
+    path: 'users/:id',
     component: User,
     data: {}
   },
   {
-    path: 'Users',
+    path: 'users/add',
+    component: User,
+    data: {}
+  },
+  {
+    path: 'users',
     component: Users
   },
   {
-    path: 'Groups/:id',
+    path: 'groups/:id',
     component: Group
   },
   {
-    path: 'Groups',
+    path: 'groups',
     component: Groups
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 

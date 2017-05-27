@@ -3,19 +3,17 @@
  */
 
 import {
-    Component,
-    ViewChild
+    Component
 } from "@angular/core";
 import {Router} from "@angular/router";
-
-import {SpeechService} from "../../services/speech-services";
+import {GroupService} from "../../services/group-service";
 
 @Component({
-  providers: [SpeechService],
+  providers: [],
   selector: "groups",
   templateUrl: './groups.html'
 })
 
 export class Groups {
-
+  constructor(public groupSvc: GroupService){}
 }

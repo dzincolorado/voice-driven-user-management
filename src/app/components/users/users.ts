@@ -3,19 +3,19 @@
  */
 
 import {
-    Component,
-    ViewChild
+    Component
 } from "@angular/core";
 import {Router} from "@angular/router";
-
-import {SpeechService} from "../../services/speech-services";
+import {UserService} from "../../services/user-service";
 
 @Component({
-  providers: [SpeechService],
+  providers: [],
   selector: "users",
   templateUrl: './users.html'
 })
 
 export class Users {
+  constructor(public userSvc: UserService){
 
+  }
 }

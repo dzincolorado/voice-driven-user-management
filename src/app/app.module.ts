@@ -5,16 +5,20 @@ import { BrowserModule,  } from '@angular/platform-browser';
 // import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {routing} from "./app.routes";
+import {App} from "./app.component";
 import {Home} from "./components/home/home";
 import {Users} from './components/users/users';
 import {User} from './components/users/user';
 import {Groups} from './components/groups/groups';
 import {Group} from './components/groups/group';
+import {UserService} from './services/user-service';
+import {GroupService} from './services/group-service';
 
 @NgModule({
   imports:      [/*BrowserAnimationsModule, */BrowserModule, FormsModule, HttpModule, ReactiveFormsModule, routing],
   entryComponents: [Home, Groups, Users],
-  declarations: [ Home, Group, Groups, User, Users  ],
-  bootstrap:    [ Home ]
+  providers: [UserService, GroupService],
+  declarations: [ App, Home, Group, Groups, User, Users  ],
+  bootstrap:    [ App ]
 })
 export class AppModule { }

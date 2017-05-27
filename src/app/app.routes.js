@@ -30,30 +30,36 @@ System.register(["@angular/router", "./components/home/home", "./components/user
              * Created by denisziegler on 5/26/17.
              */
             appRoutes = [
-                { path: '',
-                    redirectTo: 'home',
-                    pathMatch: 'full'
-                },
                 {
                     path: 'home',
                     component: home_1.Home
                 },
                 {
-                    path: 'Users/:id',
+                    path: 'users/:id',
                     component: user_1.User,
                     data: {}
                 },
                 {
-                    path: 'Users',
+                    path: 'users/add',
+                    component: user_1.User,
+                    data: {}
+                },
+                {
+                    path: 'users',
                     component: users_1.Users
                 },
                 {
-                    path: 'Groups/:id',
+                    path: 'groups/:id',
                     component: group_1.Group
                 },
                 {
-                    path: 'Groups',
+                    path: 'groups',
                     component: groups_1.Groups
+                },
+                {
+                    path: '',
+                    redirectTo: 'home',
+                    pathMatch: 'full'
                 }
             ];
             exports_1("routing", routing = router_1.RouterModule.forRoot(appRoutes));

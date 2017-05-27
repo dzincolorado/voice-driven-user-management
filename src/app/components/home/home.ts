@@ -3,16 +3,13 @@
  */
 
 import {
-    Component,
-    ViewChild
+    Component
 } from "@angular/core";
 import {Router} from "@angular/router";
 
-import {SpeechService} from "../../services/speech-services";
-
 @Component({
-  providers: [SpeechService],
-  selector: "home",
+  providers: [],
+  // selector: "home",
   templateUrl: './home.html'
 })
 

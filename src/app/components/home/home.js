@@ -1,7 +1,7 @@
 /**
  * Created by denisziegler on 5/26/17.
  */
-System.register(["@angular/core", "../../services/speech-services"], function (exports_1, context_1) {
+System.register(["@angular/core"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,14 +10,11 @@ System.register(["@angular/core", "../../services/speech-services"], function (e
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, speech_services_1, Home;
+    var core_1, Home;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (speech_services_1_1) {
-                speech_services_1 = speech_services_1_1;
             }
         ],
         execute: function () {/**
@@ -27,8 +24,8 @@ System.register(["@angular/core", "../../services/speech-services"], function (e
             };
             Home = __decorate([
                 core_1.Component({
-                    providers: [speech_services_1.SpeechService],
-                    selector: "home",
+                    providers: [],
+                    // selector: "home",
                     templateUrl: './home.html'
                 })
             ], Home);

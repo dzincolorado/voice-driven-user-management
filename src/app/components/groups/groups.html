@@ -1,3 +1,9 @@
 <div>
   Groups
 </div>
+
+<ul>
+  <li *ngFor="let group of groupSvc.list">
+    {{group.id}} - {{group.name}}
+  </li>
+</ul>

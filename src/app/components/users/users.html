@@ -1,3 +1,10 @@
 <div>
   Users
 </div>
+
+<ol>
+  <li *ngFor="let user of userSvc.list">
+    {{user.id}} - {{user.name}}
+    <div>{{user.stringifiedGroups}}</div>
+  </li>
+</ol>
