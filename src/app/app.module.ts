@@ -14,10 +14,12 @@ import {Group} from './components/groups/group';
 import {UserService} from './services/user-service';
 import {GroupService} from './services/group-service';
 
+import {GroupsController} from './controllers/groups-controller';
+
 @NgModule({
   imports:      [/*BrowserAnimationsModule, */BrowserModule, HttpModule, routing],
   entryComponents: [Home, Groups, Users],
-  providers: [UserService, GroupService],
+  providers: [UserService, GroupService, GroupsController],
   declarations: [ App, Home, Group, Groups, User, Users  ],
   bootstrap:    [ App ]
 })

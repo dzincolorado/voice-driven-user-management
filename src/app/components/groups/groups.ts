@@ -4,6 +4,7 @@
 
 import {Component} from "@angular/core";
 import {GroupService} from "../../services/group-service";
+import {GroupsController} from "../../controllers/groups-controller";
 
 @Component({
   providers: [],
@@ -12,5 +13,5 @@ import {GroupService} from "../../services/group-service";
 })
 
 export class Groups {
-  constructor(public groupSvc: GroupService){}
+  constructor(public groupSvc: GroupService, public groupsCtrl: GroupsController){}
 }
