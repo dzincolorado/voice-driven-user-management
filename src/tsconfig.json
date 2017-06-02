@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "system", //es6
+    "module": "system",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -10,7 +10,6 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": ".",
-//    "outDir": "../dist/js",
     "paths": {
       "annyang": [
         "typings/annyang"
